@@ -1,0 +1,30 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+
+
+<form method="POST" action="/search">
+  {% csrf_token %}
+  <input  type="text" placeholder="Enter Donar Info"><br>
+   <button type="submit" name="search" id="search">Search</button>
+
+
+</form>
+
+ <table border="">
+{% for book in donar %}
+                 <tr>
+                     <td> {{book.name}}</td>
+                     <td>  {{book.email}}</td>
+
+                   <td>{{book.sel1}}</td>
+                   <td> {{book.sel2}}</td>
+
+
+
+                 </tr>
+            {% endfor %}
+
+ </table>
+
+  {% endblock %}

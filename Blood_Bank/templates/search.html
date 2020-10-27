@@ -1,0 +1,41 @@
+ksdelfj lkdsjf ldsk
+
+
+{% extends "homepage.html" %}
+
+{% block title %}
+
+
+<form method="POST" action="/search">
+  {% csrf_token %}
+  <input  type="text" placeholder="Enter Donar Info" name="search" id="search"><br>
+   <button type="submit">Search</button>
+
+
+</form>
+
+<div>
+
+  <table border="">
+{% for book in ab %}
+                 <tr>
+                     <td> {{book.name}}</td>
+                     <td>  {{book.email}}</td>
+                     <td> {{ book.password}}</td>
+                   <td>{{book.sel1}}</td>
+                   <td> {{book.sel2}}</td>
+
+
+
+                 </tr>
+            {% endfor %}
+
+ </table>
+
+</div>
+
+
+
+
+
+  {% endblock %}
